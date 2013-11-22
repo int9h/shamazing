@@ -1,6 +1,6 @@
 # shamazing
 
-Just for fun copy of [holman](https://github.com/holman/shamazing)'s ```shamazing``` written in python. 
+Just for fun copy of [holman](https://github.com/holman/shamazing)s ```shamazing``` written in python. 
 
 It's just sha-mazing and without any sense :)
 
