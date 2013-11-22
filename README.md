@@ -1,7 +1,8 @@
 # shamazing
 
-Just for fun copy of @holman's ```shamazing``` written in python. 
-It's sha-mazing and without any sense 
+Just for fun copy of [holman](https://github.com/holman/shamazing)'s ```shamazing``` written in python. 
+
+It's just sha-mazing and without any sense :)
 
 ### Command Line Interface
 ```sh
