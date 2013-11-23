@@ -4,8 +4,10 @@ import re
 " @author Manuel Wildauer <m.wildauer@gmail.com>
 "
 """
+
+
 class Shamazing:
-    
+
     VERSION = "0.0.2"
 
     """
@@ -14,7 +16,7 @@ class Shamazing:
     """
     def string(string):
         strings = re.findall(r'[a-zA-Z]+', string) or False
-        if strings != False:
+        if strings is not False:
             return max(strings, key=len)
 
         return "No strings found"
@@ -25,11 +27,11 @@ class Shamazing:
     """
     def integer(string):
         ints = re.findall(r'[0-9]+', string) or False
-        if ints != False:
+        if ints is not False:
             return max(ints, key=len)
 
         return "No integer found"
-    
+
     """
     " @param list listOfStrings
     " @return string
@@ -38,7 +40,7 @@ class Shamazing:
         strings = list()
         for sha in listOfStrings:
             strings.append(Shamazing.string(sha))
-        
+
         return max(strings, key=len)
 
     """
@@ -51,6 +53,3 @@ class Shamazing:
             integers.append(Shamazing.integer(sha))
 
         return max(integers, key=len)
-
-
-

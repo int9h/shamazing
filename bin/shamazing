@@ -7,15 +7,17 @@ sys.path.append("../lib")
 
 from Shamazing import Shamazing
 
+
 def createSHA():
-    import hashlib,uuid
+    import hashlib
+    import uuid
     return str(hashlib.sha1(str(uuid.uuid4()).encode()).hexdigest())
 
 if len(sys.argv) > 1:
     sha = sys.argv[1]
 else:
     sha = createSHA()
-    print ("SHA1 is: " + sha)
+    print("SHA1 is: " + sha)
 
 print("Longest string: " + Shamazing.string(sha))
 print("Longest integer: " + Shamazing.integer(sha))
@@ -24,7 +26,7 @@ print("Longest integer: " + Shamazing.integer(sha))
 print("\n")
 
 shas = list()
-for s in range(1,5):
+for s in range(1, 5):
     sha = createSHA()
     print(sha)
     shas.append(sha)
