@@ -1,23 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: iso-8859-1 -*-
 
-import sys,hashlib,uuid
-from optparse import OptionParser
-parser = OptionParser()
-(option, args) = parser.parse_args()
+import sys
 
 sys.path.append("../lib")
 
 from Shamazing import Shamazing
 
 def createSHA():
+    import hashlib,uuid
     return str(hashlib.sha1(str(uuid.uuid4()).encode()).hexdigest())
 
-if len(args) != 0:
-    sha = args[0]
+if len(sys.argv) > 1:
+    sha = sys.argv[1]
 else:
     sha = createSHA()
     print ("SHA1 is: " + sha)
 
 print("Longest string: " + Shamazing.string(sha))
 print("Longest integer: " + Shamazing.integer(sha))
+
+
+print("\n")
+
+shas = list()
+for s in range(1,5):
+    sha = createSHA()
+    print(sha)
+    shas.append(sha)
+
+print("Longest string in List: " + Shamazing.stringFromList(shas))
+print("Longest integer in List: " + Shamazing.integerFromList(shas))
