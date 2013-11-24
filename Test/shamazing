@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# -*- coding: iso-8859-1 -*-
+
+import sys
+
+sys.path.append("../lib")
+
+from Shamazing import Shamazing
+
+
+def createSHA():
+    import hashlib
+    import uuid
+    return str(hashlib.sha1(str(uuid.uuid4()).encode()).hexdigest())
+
+
+sha = createSHA()
+print()
+print("SHA1 is: " + sha)
+
+print("Longest string: " + Shamazing.string(sha))
+print("Longest integer: " + Shamazing.integer(sha))
+print()
+
+print("List of SHA1 is: ")
+shas = list()
+for s in range(1, 10):
+    sha = createSHA()
+    print(sha)
+    shas.append(sha)
+
+print()
+print("Longest string in List: " + Shamazing.stringFromList(shas))
+print("Longest integer in List: " + Shamazing.integerFromList(shas))

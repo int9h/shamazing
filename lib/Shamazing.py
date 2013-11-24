@@ -7,7 +7,7 @@ import re
 
 class Shamazing:
 
-    VERSION = "0.0.2"
+    VERSION = "0.0.3"
 
     """
     " @param string string
