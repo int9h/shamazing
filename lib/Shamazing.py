@@ -15,41 +15,49 @@ class Shamazing:
     " @return string
     """
     def string(string):
-        strings = re.findall(r'[a-zA-Z]+', string) or False
-        if strings is not False:
-            return max(strings, key=len)
+        if type(string) is str:
+            strings = re.findall(r'[a-zA-Z]+', string) or False
+            if strings is not False:
+                return max(strings, key=len)
 
-        return "No strings found"
+            return "No strings found"
+        raise TypeError
 
     """
     " @param string string
     " @return string
     """
     def integer(string):
-        ints = re.findall(r'[0-9]+', string) or False
-        if ints is not False:
-            return max(ints, key=len)
+        if type(string) is str:
+            ints = re.findall(r'[0-9]+', string) or False
+            if ints is not False:
+                return max(ints, key=len)
 
-        return "No integer found"
+            return "No integer found"
+        raise TypeError
 
     """
     " @param list listOfStrings
     " @return string
     """
     def stringFromList(listOfStrings):
-        strings = list()
-        for sha in listOfStrings:
-            strings.append(Shamazing.string(sha))
+        if type(listOfStrings) is list:
+            strings = list()
+            for sha in listOfStrings:
+                strings.append(Shamazing.string(sha))
 
-        return max(strings, key=len)
+            return max(strings, key=len)
+        raise TypeError
 
     """
     " @param list listOfStrings
     " @return string
     """
     def integerFromList(listOfStrings):
-        integers = list()
-        for sha in listOfStrings:
-            integers.append(Shamazing.integer(sha))
+        if type(listOfStrings) is list:
+            integers = list()
+            for sha in listOfStrings:
+                integers.append(Shamazing.integer(sha))
 
-        return max(integers, key=len)
+            return max(integers, key=len)
+        raise TypeError
