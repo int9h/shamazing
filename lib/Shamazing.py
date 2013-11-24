@@ -5,7 +5,6 @@ import re
 "
 """
 
-
 class Shamazing:
 
     VERSION = "0.0.2"
@@ -16,11 +15,10 @@ class Shamazing:
     """
     def string(string):
         if type(string) is str:
-            strings = re.findall(r'[a-zA-Z]+', string) or False
-            if strings is not False:
+            strings = re.findall(r'[a-zA-Z]+', string) or None
+            if strings is not None:
                 return max(strings, key=len)
-
-            return "No strings found"
+            return None
         raise TypeError
 
     """
@@ -29,11 +27,10 @@ class Shamazing:
     """
     def integer(string):
         if type(string) is str:
-            ints = re.findall(r'[0-9]+', string) or False
-            if ints is not False:
+            ints = re.findall(r'[0-9]+', string) or None
+            if ints is not None:
                 return max(ints, key=len)
-
-            return "No integer found"
+            return None
         raise TypeError
 
     """
